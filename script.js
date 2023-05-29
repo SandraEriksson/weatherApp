@@ -27,3 +27,13 @@ fetch('http://api.openweathermap.org/data/2.5/weather?id=2664454&units=metric&ap
     wind.innerHTML = "Vindhastighet <br>" + windValue + " km/h";
     desc.innerHTML = descValue;
 });  
+function refreshTime() {
+    const dateTime = new Date().toLocaleDateString() + " " + new Date().toLocaleTimeString();
+    document.getElementById("dateTime").innerHTML = dateTime;
+    }
+    
+    setInterval(refreshTime, 1000);
+    
+    window.setTimeout( function() {
+        window.location.reload();
+    }, 1800000);
